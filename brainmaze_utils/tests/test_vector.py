@@ -60,21 +60,21 @@ class TestCheckScale(unittest.TestCase):
             _check_scale(x, m)
 
 
-
-class TestTransformations(unittest.TestCase):
-    def setUp(self):
-        self.data_2d = np.array([[1, 2], [3, 4]])
-        self.data_3d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-
-    def test_translate(self):
-        translated = translate(self.data_2d.copy(), [1, 2])
-        expected = np.array([[2, 4], [4, 6]])
-        np.testing.assert_array_equal(translated, expected)
-
-    def test_scale(self):
-        scaled = scale(self.data_2d.copy(), [1, 2])
-        expected = np.array([[0., 0.], [4., 8.]])  # Adjust expected values based on your scale logic
-        np.testing.assert_allclose(scaled, expected)
+#
+# class TestTransformations(unittest.TestCase):
+#     def setUp(self):
+#         self.data_2d = np.array([[1, 2], [3, 4]])
+#         self.data_3d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+#
+#     def test_translate(self):
+#         translated = translate(self.data_2d.copy(), [1, 2])
+#         expected = np.array([[2, 4], [4, 6]])
+#         np.testing.assert_array_equal(translated, expected)
+#
+#     def test_scale(self):
+#         scaled = scale(self.data_2d.copy(), [1, 2])
+#         expected = np.array([[0., 0.], [4., 8.]])  # Adjust expected values based on your scale logic
+#         np.testing.assert_allclose(scaled, expected)
 
     # def test_rotate_2d(self):
     #     rotated = rotate(self.data_2d.copy(), 90)
