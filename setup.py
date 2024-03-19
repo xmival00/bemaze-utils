@@ -15,7 +15,7 @@ import os
 import re
 
 ## get version from file
-VERSIONFILE="./best/__init__.py"
+VERSIONFILE="./brainmaze_utils/__init__.py"
 verstrline = open(VERSIONFILE, "rt").read()
 VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]"
 mo = re.search(VSRE, verstrline, re.M)
@@ -57,6 +57,7 @@ setuptools.setup(
     install_requires =[
         'numpy',
         'scipy',
+        'pandas',
         'scikit-learn',
     ]
 )
