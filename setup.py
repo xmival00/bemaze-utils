@@ -23,15 +23,12 @@ if mo:
     verstr = mo.group(1)
 else:
     raise RuntimeError("Unable to find version string in %s." % (VERSIONFILE,))
-    raise RuntimeError("Unable to find version string in %s." % (VERSIONFILE,))
-
-
 
 setuptools.setup(
-    name="brainmaze_utils",
+    name="brainmaze-utils",
     version=verstr,
     license='',
-    url="https://github.com/bnelair/brainmaze-utils",
+    url="https://github.com/bnelair/brainmaze_utils",
 
     author="Filip Mivalt",
     author_email="mivalt.filip@mayo.edu",
@@ -59,6 +56,9 @@ setuptools.setup(
         'scipy',
         'pandas',
         'scikit-learn',
+        'mef-tools',
+        'tqdm',
+        'matplotlib'
     ]
 )
 
