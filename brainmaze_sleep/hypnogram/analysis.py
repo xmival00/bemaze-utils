@@ -12,12 +12,12 @@ import matplotlib.pyplot as plt
 from copy import deepcopy
 from tqdm import tqdm
 
-from brainmaze_annotations.sleep.visualisation import plot_hypnogram
+from brainmaze_sleep.hypnogram.visualisation import plot_hypnogram
 from brainmaze_annotations.utils import merge_annotations, filter_by_key
 
 
 """
-Tools for analyzing hypnograms such as number of cycles, sleep time etc.
+Tools for analyzing hypnograms such as number of cycles, hypnogram time etc.
 """
 
 
@@ -29,7 +29,7 @@ def get_fell_asleep_time(df, t_sleep_check=60, t_awake_threshold=10, awake_tag='
     df = filter_by_key(df, 'annotation', 'Arrousal')
     # parameters
     t_sleep = datetime.timedelta(minutes=t_sleep_check) # interval since 1st asleep checked
-    t_awake = datetime.timedelta(minutes=t_awake_threshold) # length of all awake cycles during the interval defined by t_sleep since the beginning of the sleep
+    t_awake = datetime.timedelta(minutes=t_awake_threshold) # length of all awake cycles during the interval defined by t_sleep since the beginning of the hypnogram
 
     # get first asleep
     awake_to_sleep_changes = np.where(
@@ -229,7 +229,7 @@ def print_sleep_score(score):
     print('Rem latency - last_awake: {:02}:{:02}:{:02}'.format(int(hrs_rem1), int(mins_rem1), int(secs_rem1)))
     print('Rem latency - fall_asleep: {:02}:{:02}:{:02}'.format(int(hrs_rem2), int(mins_rem2), int(secs_rem2)))
 
-    print('Number of sleep cycles: ', score['n_complete_sleep_cycles'])
+    print('Number of hypnogram cycles: ', score['n_complete_sleep_cycles'])
     print('Number of awakenings', score['n_awakenings'])
     print()
     print('Sleep-time non-REM')

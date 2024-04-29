@@ -24,9 +24,9 @@ def plot_hypnogram(orig_df, hypnogram_values=None, hypnogram_colors=None, fontsi
     ----------
     orig_df : annotations
     hypnogram_values : dict
-        dict of a y-axis values for each sleep state
+        dict of a y-axis values for each hypnogram state
     hypnogram_colors : dict
-        dict of color hex codes for each sleep state
+        dict of color hex codes for each hypnogram state
     fontsize : int
         Fontsize
     fig : figure
