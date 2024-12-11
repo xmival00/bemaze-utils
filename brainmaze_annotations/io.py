@@ -10,10 +10,9 @@ import pandas as pd
 
 from tqdm import tqdm
 from copy import deepcopy
-try:
-    from mef_tools.io import MefReader
-except:
-    print('MefReader not found. Please install mef-tools package.')
+
+# from mef_tools.io import MefReader
+
 
 from .formats.CyberPSG import CyberPSGFile, CyberPSG_XML_Writter
 from .formats.NSRR import NSRRSleepFile
@@ -182,22 +181,22 @@ def load_NSRR(path):
     return NSRRSleepFile(path).get_hypnogram()
 
 
-def load_MefFile(mefid: MefReader):
-    hyp = pd.DataFrame(mefid.get_annotations())
-    hyp['duration'] = hyp['duration']/1e6
-    hyp = hyp.drop(columns='type')
-
-    hyp['start'] = hyp['time']/1e6
-    hyp = hyp.drop(['time'], axis=1)
-
-    hyp['end'] = hyp['start'] + hyp['duration']
-
-    hyp['annotation'] = hyp['text']
-    hyp = hyp.drop(['text'], axis=1)
-
-    hyp = hyp[['annotation', 'start', 'end', 'duration']]
-
-    return hyp
+# def load_MefFile(mefid: MefReader):
+#     hyp = pd.DataFrame(mefid.get_annotations())
+#     hyp['duration'] = hyp['duration']/1e6
+#     hyp = hyp.drop(columns='type')
+#
+#     hyp['start'] = hyp['time']/1e6
+#     hyp = hyp.drop(['time'], axis=1)
+#
+#     hyp['end'] = hyp['start'] + hyp['duration']
+#
+#     hyp['annotation'] = hyp['text']
+#     hyp = hyp.drop(['text'], axis=1)
+#
+#     hyp = hyp[['annotation', 'start', 'end', 'duration']]
+#
+#     return hyp
 
 import numpy as np
 
