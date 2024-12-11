@@ -56,7 +56,6 @@ setuptools.setup(
         'scipy',
         'pandas',
         'scikit-learn',
-        'mef-tools',
         'tqdm',
         'matplotlib'
     ]

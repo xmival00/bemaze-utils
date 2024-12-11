@@ -1,11 +1,14 @@
+"""
+=======================================
+Brainmaze utils (:mod:`brainmaze_utils`)
+=======================================
 
-__version__ = '0.0.0a'
+"""
+__version__ = '0.0.2'
 
-import brainmaze_utils.files as files
-import brainmaze_utils.signal as signal
-import brainmaze_utils.types as types
-import brainmaze_utils.vector as vector
+from brainmaze_utils import files
+from brainmaze_utils import signal
+from brainmaze_utils import types
+from brainmaze_utils import vector
 
-import brainmaze_annotations as annotations
-
-__all__ = ['annotations', 'files', 'signal', 'types', 'vector']
+__all__ = ['files', 'signal', 'types', 'vector']
