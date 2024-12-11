@@ -10,7 +10,10 @@ import pandas as pd
 
 from tqdm import tqdm
 from copy import deepcopy
-from mef_tools.io import MefReader
+try:
+    from mef_tools.io import MefReader
+except:
+    print('MefReader not found. Please install mef-tools package.')
 
 from .formats.CyberPSG import CyberPSGFile, CyberPSG_XML_Writter
 from .formats.NSRR import NSRRSleepFile
